@@ -1,9 +1,9 @@
 import React from "react";
 
-const API_KEY = "3ZkAsAtjGs6SJgjRttscxEyJ8pq6odBV"
+const API_KEY = ""
 let search = input value from the search box
 
-//https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=${search}&limit=10
+//https://api.giphy.com/v1/gifs/search?api_key=3ZkAsAtjGs6SJgjRttscxEyJ8pq6odBV&q=${search}&limit=10
 //api.giphy.com/v1/gifs/trending
 //Do not cache API responses -- means what?
 //t’s best to use the smaller fixed_height or fixed_width renditions on your preview grid.
