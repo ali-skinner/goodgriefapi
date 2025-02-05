@@ -10,19 +10,29 @@ const isLoggedIn = () => {
     setIsActive(!isActive);
 };
 
+const handleLogin = () => {
+e.preventDefault();
+// if username and password arent blank, setIsActive(true) & log in user and show search page
+
+if (username && password) {
+    setIsActive(true);
+    //do i need to reset username and password to blank fields?
+    //show Search page
+}
+};
 
     return (
         <>
-            <form>
+            <form onSubmit={handleLogin}>
                 <div className="login-Container">
                     <h2 className="login-Header">Sign In</h2>
-                    <div className="login-Input">
+                    <div>
                         <label htmlFor="username">Username</label>
-                        <input value={username} onChange={(e) => setUsername(e.target.value)} type="text" placeholder="username" name="username" id="username" />
+                        <input className="login-input" value={username} onChange={(e) => setUsername(e.target.value)} type="text" placeholder="username" name="username" id="username" />
                     </div>
-                    <div className="login-Input">
+                    <div>
                         <label htmlFor="password">Password</label>
-                        <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="password" name="password" id="password" />
+                        <input className="login-input" value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="password" name="password" id="password" />
 
                     </div>
                     <div className="button-container">
