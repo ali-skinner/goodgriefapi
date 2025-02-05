@@ -1,42 +1,55 @@
 import React, { useState } from "react";
 
 function Register() {
-    const [email, setEmail] = useState();
-    const [password, setPassword] = useState();
-    const [username, setUsername] = useState({});
-    const [register, setRegister] = useState();
-// will I need useEffect? to make sure this login components shows on mount only, can't keep loggin in if already active/login = true
+    const [password, setPassword] = useState('');
+    const [username, setUsername] = useState('');
+    const [isActive, setIsActive] = useState(false);
+    const [register, setRegister] = useState('');
+    // will I need useEffect? to make sure this login components shows on mount only, can't keep loggin in if already active/login = true
+
+    const isLoggedIn = () => {
+        setIsActive(!isActive);
+    };
+
+    const handleLogin = () => {
+        e.preventDefault();
+        // if username and password arent blank, setIsActive(true) & log in user and show search page
+
+        if (username && password) {
+            setIsActive(true);
+            //do i need to reset username and password to blank fields?
+            //show Search page
+        }
+    };
 
     return (
         <>
-            <form>
+            <form onSubmit={handleLogin}>
                 <div className="login-Container">
-                    <h2 className="login-Header">Sign In</h2>
-                    <div className="login-Input">
-                        <label htmlFor="username">Username</label>
-                        <input value={username} onChange={(e) => setUsername(e.target.value)} type="text" placeholder="username" name="username" id="username" />
+                    <h2 className="login-Header">New Member Registry</h2>
+                    <div>
+                        <label htmlFor="username">New Username</label>
+                        <input className="login-input" value={username} onChange={(e) => setUsername(e.target.value)} type="text" placeholder="username" name="username" id="username" />
                     </div>
-                    <div className="login-Input">
-                        <label htmlFor="password">Password</label>
-                        <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="password" name="password" id="password" />
+                    <div>
+                        <label htmlFor="password">Set Password</label>
+                        <input className="login-input" value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="password" name="password" id="password" />
+
+                    </div>
+
+                    <div>
+                        <label htmlFor="register-name">Name</label>
+                        <input className="login-input" value={register} onChange={(e) => setRegister(e.target.value)} type="text" placeholder="registration name" name="register-name" id="register-anme" />
+                    </div>
+                    <div>
+                        {/* /* {onClick - add username, email, password to userprofile object/ set login to true/ load Search screen/component  */}
+                        <button className="button-login">Create Account</button>
+                        <button className="button-login">Already a user? Sign In</button>
 
                     </div>
                     <div className="button-container">
-                        {/* Log In onClick - add username, email, password to userprofile object/ set login to true/ load Search screen/component */}
-                        <button className="button-login">Log In</button>
+                        {/* need a toggle? go back to login screen and hide register screen */}
 
-                        {/* Register onClick - Shows Register screen inputs/ Hides login In Screen inputs */}
-                        <button className="button-login">Register</button>
-
-
-                    </div>
-                    <div className="login-Input">
-                        <label htmlFor="register">Register</label>
-                        <input value={register} onChange={(e) => setRegister(e.target.value)} type="text" placeholder="register" name="register" id="register" />
-                    </div>
-                    <div>
-                        <button className="button-login">Create Username</button>
-                        {/* onClick - add username, email, password to userprofile object/ set login to true/ load Search screen/component */}
                     </div>
                 </div>
             </form>

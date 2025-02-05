@@ -1,25 +1,26 @@
 import React, { useState } from "react";
+import Register from './Register';
 
 function LoginPage() {
     const [password, setPassword] = useState('');
     const [username, setUsername] = useState('');
     const [isActive, setIsActive] = useState(false);
-// will I need useEffect? to make sure this login components shows on mount only, can't keep loggin in if already active/login = true
+    // will I need useEffect? to make sure this login components shows on mount only, can't keep loggin in if already active/login = true
 
-const isLoggedIn = () => {
-    setIsActive(!isActive);
-};
+    const isLoggedIn = () => {
+        setIsActive(!isActive);
+    };
 
-const handleLogin = () => {
-e.preventDefault();
-// if username and password arent blank, setIsActive(true) & log in user and show search page
+    const handleLogin = () => {
+        e.preventDefault();
+        // if username and password arent blank, setIsActive(true) & log in user and show search page
 
-if (username && password) {
-    setIsActive(true);
-    //do i need to reset username and password to blank fields?
-    //show Search page
-}
-};
+        if (username && password) {
+            setIsActive(true);
+            //do i need to reset username and password to blank fields?
+            //show Search page
+        }
+    };
 
     return (
         <>
@@ -43,7 +44,7 @@ if (username && password) {
                         <button className="button-login">Register</button>
 
 
-                   {/*this is for the register component
+                        {/*this is for the register component
                     </div>
                     <div className="login-Input">
                         <label htmlFor="register">Register</label>
@@ -52,7 +53,10 @@ if (username && password) {
                     <div>
                         <button className="button-login">Create Username</button>
                         {/* {onClick - add username, email, password to userprofile object/ set login to true/ load Search screen/component } */}
-                  </div> 
+                    </div>
+                    <div>
+                        <Register />
+                    </div>
                 </div>
             </form>
         </>
