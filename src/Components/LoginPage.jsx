@@ -11,7 +11,7 @@ function LoginPage() {
         setIsActive(!isActive);
     };
 
-    const handleLogin = () => {
+    const handleLogin = (e) => {
         e.preventDefault();
         // if username and password arent blank, setIsActive(true) & log in user and show search page
 
@@ -38,10 +38,10 @@ function LoginPage() {
                     </div>
                     <div className="button-container">
                         {/* Log In onClick - add username, email, password to userprofile object/ set login to true/ load Search screen/component */}
-                        <button className="button-login">Log In</button>
+                        <button className="button-login" type="submit" name="logInButton" id="logInButton">Log In</button>
 
                         {/* Register onClick - Shows Register screen inputs/ Hides login In Screen inputs */}
-                        <button className="button-login">Register</button>
+                        <button className="button-login" onClick={(e) => <Register/> }>Register</button>
 
 
                         {/*this is for the register component
@@ -55,7 +55,7 @@ function LoginPage() {
                         {/* {onClick - add username, email, password to userprofile object/ set login to true/ load Search screen/component } */}
                     </div>
                     <div>
-                        <Register />
+                        {/* <Register /> */}
                     </div>
                 </div>
             </form>

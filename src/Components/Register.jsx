@@ -25,6 +25,7 @@ function Register() {
     return (
         <>
             <form onSubmit={handleLogin}>
+                {console.log("is register working?")}
                 <div className="login-Container">
                     <h2 className="login-Header">New Member Registry</h2>
                     <div>
