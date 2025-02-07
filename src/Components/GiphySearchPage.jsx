@@ -1,11 +1,8 @@
-import React from "react";
 
-const API_KEY = ""
-let search = input value from the search box
 
 //https://api.giphy.com/v1/gifs/search?api_key=3ZkAsAtjGs6SJgjRttscxEyJ8pq6odBV&q=${search}&limit=10
 //api.giphy.com/v1/gifs/trending
-//Do not cache API responses -- means what?
+//Do not cache API responses -- means what? -- don't store in local storage
 //t’s best to use the smaller fixed_height or fixed_width renditions on your preview grid.
 //We require all apps that use the GIPHY API to conspicuously display "Powered By GIPHY" attribution marks where the API is utilized 
 
@@ -20,11 +17,29 @@ let search = input value from the search box
 // Trending Endpoint:
 // --> api_key: string(required); limit: integer (int32); offset: integer (int32); rating: string; [there are more]
 
-function GiphySearchPage() {
-     
-    return(
+//do i need a ref/useRef (.current property) in the useEffect so the giphs stay mounted and the api call doesnt keep calling giph/re-rendering  and showing same pix ovr n ovr = slow and using a ton of memory?
 
-    );
-};
+import React from "react";
+import { useState, useEffect } from "react";
+
+const url = 'https://api.giphy.com/v1/gifs/search?api_key=3ZkAsAtjGs6SJgjRttscxEyJ8pq6odBV&q=${search}&limit=10'
+let search = //input value from the search box
+
+    function GiphySearchPage() {
+        const [search, setSearch] = useState();
+
+        useEffect(() => {
+
+        }, []);
+
+         
+        return (
+            <>
+                <div>
+
+                </div>
+            </>
+        );
+    };
 
 export default GiphySearchPage;
