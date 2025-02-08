@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
 const baseUrl = 'https://api.giphy.com/v1/gifs/search?api_key=3ZkAsAtjGs6SJgjRttscxEyJ8pq6odBV&q=${search}&limit=10'
 let search = //input value from the search box
 
-    function GiphySearchPage() {
+    export default function useGiphySearch(url) {
         const [search, setSearch] = useState();
 
         useEffect(() => {
@@ -22,7 +22,7 @@ let search = //input value from the search box
         );
     };
 
-export default GiphySearchPage;
+
 
 //https://api.giphy.com/v1/gifs/search?api_key=3ZkAsAtjGs6SJgjRttscxEyJ8pq6odBV&q=${search}&limit=10
 //api.giphy.com/v1/gifs/trending
