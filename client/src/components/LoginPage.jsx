@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Register from './Register';
+// import SearchPage from "./SearchPage";
 
 function LoginPage() {
     const [password, setPassword] = useState('');
@@ -19,6 +20,7 @@ function LoginPage() {
             setIsActive(true);
             //do i need to reset username and password to blank fields?
             //show Search page
+            // <SearchPage />
         }
     };
 
@@ -41,7 +43,7 @@ function LoginPage() {
                         <button className="button-login" type="submit" name="logInButton" id="logInButton">Log In</button>
 
                         {/* Register onClick - Shows Register screen inputs/ Hides login In Screen inputs */}
-                        <button className="button-login" onClick={(e) => <Register/> }>Register</button>
+                        <button className="button-login" onClick={(e) => <Register /> }>Register</button>
 
 
                         {/*this is for the register component
