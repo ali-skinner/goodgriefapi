@@ -1,7 +1,7 @@
-import { act } from 'react'
-import { describe, it, test, expect } from 'vitest'
-import { render, screen, fireEvent, } from '@testing-library/react'
+import { describe, it, expect } from 'vitest'
+import { render, } from '@testing-library/react'
 import App from './App'
+import React from 'react'
 
 describe('A truthy statement', () => {
   it('should be equal to 2', () => {
