@@ -15,8 +15,20 @@ export default function SearchComponent() {
 
 return (
        <>
-       
+       <form onSubmit={handleSubmit}>
+        <label htmlFor="search-query">Search Query</label>
+        <input
+            type="text"
+            placeholder="Search for GIFS!"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            name="search-query"
+            id="search-query"
+        />
+        <button type="submit" name="submit-search-button" id="submit-search-button">Submit Search</button>
+       </form>
 
+{loading && <p>Loading gifs...</p>}
        </>
         
     );
