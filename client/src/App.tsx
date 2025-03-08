@@ -1,7 +1,8 @@
 import './App.css';
 import LoginPage from './components/LoginPage';
 import React from 'react';
-
+import SearchPage from './components/SearchPage';
+// import FavoritesPage from './components/FavoritesPage';
 
 
 function App() {
@@ -10,6 +11,8 @@ function App() {
   return (
     <>
       <LoginPage />
+      <SearchPage />
+      {/* <FavoritesPage /> */}
     </>
   )
 }

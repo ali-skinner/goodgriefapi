@@ -2,9 +2,8 @@ import React from "react";
 
 function FavoritesPage() {
 
-    return (
-
-    )
+    return
+    
 };
 
 export default FavoritesPage;

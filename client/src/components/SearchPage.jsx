@@ -1,18 +1,14 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
+import SearchComponent from "./SearchComponent";
 
 const baseUrl = 'https://api.giphy.com/v1/gifs/';
 const url = 'search?api_key=3ZkAsAtjGs6SJgjRttscxEyJ8pq6odBV&q=${query}&limit=10'
 
 
     function SearchPage() {
-        const [query, setQuery] = useState();
-
-        useEffect(() => {
-
-        }, []);
- 
+    
          
         return (
             <>

@@ -6,13 +6,14 @@ export default function SearchComponent() {
     const [query, setQuery] = useState('');
     const { results, loading, error, searchGiphy } = useSearch();
     
-const handleSubmit = (e) => {
-e.preventDefault();
-if (query.trim())
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (query.trim()) {
+            searchGiphy(query)
+        };
+    };
 
-}
-
-    return (
+return (
        <>
        
 
