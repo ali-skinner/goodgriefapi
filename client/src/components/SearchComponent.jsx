@@ -14,7 +14,7 @@ export default function SearchComponent() {
     };
 
 return (
-       <>
+    <>
        <form onSubmit={handleSubmit}>
         <label htmlFor="search-query">Search Query</label>
         <input
@@ -37,29 +37,18 @@ return (
                 key={gif.id}
                 src={gif.images.fixed_height.url}
                 alt={gif.title}
+                //height={gif.images.fixed_height.height} or call it a specific height {number}
                 />
             ))};
         </div>
-
-       </>
-        
-    );
-    
+    </>
+    );  
 }
 
 // Before the return:
     // call useSearch() by creating a new variable and destructure - useSearch should return error, results, loading, and searchGiphy? 
     // set query state
     // handleSubmit function for form onSubmit={handleSubmit}
-
-        // function ResultsComponent(data) {
-        //     return (data.map((result) => {
-        //         return (<>
-        //          <div>{result.name}</div>
-        //          <div>{result.description}</div>
-        //         </>)
-        //     }))
-        // }
         
 // in the return stmnt:
     // return the the form/submit button; 
