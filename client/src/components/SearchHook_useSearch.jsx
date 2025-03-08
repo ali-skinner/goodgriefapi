@@ -5,8 +5,8 @@ import { useState } from "react";
 
 function useSearch(query) {
     const [results, setResults] = useState([]);
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
+    const [loading, setLoading] = useState<Boolean>(false);
+    const [error, setError] = useState<String|null>(null);
 
     const searchGiphy = async (query) => {
         setLoading(true);
@@ -15,18 +15,19 @@ function useSearch(query) {
             const response = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=3ZkAsAtjGs6SJgjRttscxEyJ8pq6odBV&q=${query}&limit=10`);
             if (response.ok) {
                 const jsonDetails = await response.json();
-                setResults(jsonDetails);
+                console.log('Full Giphy response/json:', jsonDetails);
+                setResults(jsonDetails.data);
             } else {
                 throw response;
             }
         } catch (err) {
-            setError(`Failed to display your stuff. ${err}`);
+            setError(`Failed to display your stuff. Error message: ${err}`);
             console.log(err);
         } finally {
             setLoading(false);
         }
     };
-    
+
     return { results, loading, error, searchGiphy };
 };
 
