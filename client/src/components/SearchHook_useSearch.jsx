@@ -1,25 +1,17 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
-const baseUrl = 'https://api.giphy.com/v1/gifs/search?api_key=3ZkAsAtjGs6SJgjRttscxEyJ8pq6odBV&q=${search}&limit=10'
+// 'https://api.giphy.com/v1/gifs/search?api_key=3ZkAsAtjGs6SJgjRttscxEyJ8pq6odBV&q=${query}&limit=10'
+
+function useSearch(query) {
+    const [results, setResults] = useState([]);
+    const [error, SetError] = useState(null);
 
 
-    function useSearch(url) {
-        const [results, setResults] = useState([]);
+    
+    return;
 
-        useEffect(() => {
-
-        }, []);
- 
-         
-        return (
-            <>
-                <div>
-
-                </div>
-            </>
-        );
-    };
+};
 
 export default useSearch;
 
