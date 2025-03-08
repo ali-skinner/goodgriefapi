@@ -29,10 +29,11 @@ const SearchComponent = () => {
       {error && <p>{error}</p>}
       
       <div className="results-container">
-        {results.map(gif => (
+        {results.map((gif) => (
           <img 
             key={gif.id} 
             src={gif.images.fixed_height.url} 
+            // height={gif.images.fixed_height.height} or call it a specifi height {number}
             alt={gif.title} 
           />
         ))}

@@ -28,7 +28,15 @@ return (
         <button type="submit" name="submit-search-button" id="submit-search-button">Submit Search</button>
        </form>
 
-{loading && <p>Loading gifs...</p>}
+        {loading && <p>Loading gifs...</p>}
+        {error && <p>{error}</p>}
+
+<div>
+   {results.map
+
+   }
+</div>
+
        </>
         
     );
