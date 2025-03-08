@@ -31,11 +31,15 @@ return (
         {loading && <p>Loading gifs...</p>}
         {error && <p>{error}</p>}
 
-<div>
-   {results.map
-
-   }
-</div>
+        <div>
+            {results.map((gif) => ( 
+                <img
+                key={gif.id}
+                src={gif.images.fixed_height.url}
+                alt={gif.title}
+                />
+            ))};
+        </div>
 
        </>
         
