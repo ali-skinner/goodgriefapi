@@ -13,18 +13,26 @@ function useSearch(query) {
         setError(null);
         try {
             const response = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=3ZkAsAtjGs6SJgjRttscxEyJ8pq6odBV&q=${query}&limit=10`);
-            const data = 
+            if (response.ok) {
+                const jsonDetails = await response.json();
+                setResults(jsonDetails);
+            } else {
+                throw response;
+            }
+        } catch (err) {
+            setError(`Failed to display your stuff. ${err}`);
+            console.log(err);
+        } finally {
+            setLoading(false);
         }
-
     };
-
-    return;
-    { results, loading, error, searchGiphy }
+    
+    return { results, loading, error, searchGiphy };
 };
 
 export default useSearch;
 
-//https://api.giphy.com/v1/gifs/search?api_key=3ZkAsAtjGs6SJgjRttscxEyJ8pq6odBV&q=${search}&limit=10
+
 //api.giphy.com/v1/gifs/trending
 //Do not cache API responses -- means what? -- don't store in local storage
 //t’s best to use the smaller fixed_height or fixed_width renditions on your preview grid.
