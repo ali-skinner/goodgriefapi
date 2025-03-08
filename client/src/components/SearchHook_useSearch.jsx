@@ -5,8 +5,8 @@ import { useState } from "react";
 
 function useSearch(query) {
     const [results, setResults] = useState([]);
-    const [loading, setLoading] = useState<Boolean>(false);
-    const [error, setError] = useState<String|null>(null);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
 
     const searchGiphy = async (query) => {
         setLoading(true);

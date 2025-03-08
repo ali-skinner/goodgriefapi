@@ -39,10 +39,10 @@ return (
                 alt={gif.title}
                 //height={gif.images.fixed_height.height} or call it a specific height {number}
                 />
-            ))};
+            ))}
         </div>
     </>
-    );  
+    )
 }
 
 // Before the return:

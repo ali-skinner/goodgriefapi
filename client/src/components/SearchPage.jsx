@@ -12,9 +12,7 @@ function SearchPage() {
 
     return (
         <>
-            <div>
-
-            </div>
+            <SearchComponent />
         </>
     );
 };
