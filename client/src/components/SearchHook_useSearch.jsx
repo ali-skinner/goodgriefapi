@@ -5,12 +5,21 @@ import { useState } from "react";
 
 function useSearch(query) {
     const [results, setResults] = useState([]);
-    const [error, SetError] = useState(null);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
 
+    const searchGiphy = async (query) => {
+        setLoading(true);
+        setError(null);
+        try {
+            const response = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=3ZkAsAtjGs6SJgjRttscxEyJ8pq6odBV&q=${query}&limit=10`);
+            const data = 
+        }
 
-    
+    };
+
     return;
-
+    { results, loading, error, searchGiphy }
 };
 
 export default useSearch;
