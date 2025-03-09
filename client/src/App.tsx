@@ -1,6 +1,6 @@
 
 import React, { useState, createContext, useContext } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link, Navigate, useNavigate } from "react-router-dom";
 import './App.css';
 import SearchPage from './components/SearchPage';
 import LoginPage from './components/LoginPage';
@@ -46,16 +46,32 @@ function App() {
                 <nav>
                   <Link to="/search">Search</Link>
                   <Link to="/favorites">Favorites</Link>
-                  <button onClick={()=>setUser(null)}>Logout</button>
+                  <button onClick={() => setUser(null)}>Logout</button>
                 </nav>
               )}
             </header>
-            
-            <main>
 
+            <main>
+              <Routes>
+                <Route
+                  path="/"
+                  element={user ? <Navigate to="/search" /> : <LoginPage />}
+                />
+                <Route
+                  path="/search"
+                  element={user ? <SearchPage /> : <Navigate to="/" />}
+                />
+                <Route
+                  path="/favorites"
+                  element={user ? <FavoritesPage /> : <Navigate to="/" />}
+                />
+                <Route
+                path="*"
+                element={<Navigate to="/" />}
+                />
+              </Routes>
             </main>
           </div>
-
         </Router>
       </UserContext.Provider>
     </>
