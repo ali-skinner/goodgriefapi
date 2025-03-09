@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, createContext, useContext } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from "react-router-dom";
 import './App.css';
 import SearchPage from './components/SearchPage';
@@ -7,7 +7,16 @@ import LoginPage from './components/LoginPage';
 import FavoritesPage from './components/FavoritesPage';
 
 
+
+
 function App() {
+const [user, setUser] = useState('');
+const [favorites, setFavorites] = useState([]);
+//const addToFavorites function
+//const removeFromFavorites function
+//are these functions a toggle? would be nice to remove fav on search page if accidentally click fav button
+//do i need to save to local storage?
+//can i move these to components? how does this move affect useState? need to call addtoFavs in SearchComp. 
 
 
   return (
