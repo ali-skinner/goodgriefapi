@@ -39,6 +39,22 @@ function App() {
     <>
       <UserContext.Provider value={{ user, setUser, favorites, addToFavorites, removeFromFavorites }}>
         <Router>
+          <div>
+            <header>
+              <h1>Giphy Playland</h1>
+              {user && (
+                <nav>
+                  <Link to="/search">Search</Link>
+                  <Link to="/favorites">Favorites</Link>
+                  <button onClick={()=>setUser(null)}>Logout</button>
+                </nav>
+              )}
+            </header>
+            
+            <main>
+
+            </main>
+          </div>
 
         </Router>
       </UserContext.Provider>
