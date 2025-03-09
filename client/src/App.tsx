@@ -1,8 +1,10 @@
+
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from "react-router-dom";
 import './App.css';
-import LoginPage from './components/LoginPage';
-import React from 'react';
 import SearchPage from './components/SearchPage';
-// import FavoritesPage from './components/FavoritesPage';
+import LoginPage from './components/LoginPage';
+import FavoritesPage from './components/FavoritesPage';
 
 
 function App() {
