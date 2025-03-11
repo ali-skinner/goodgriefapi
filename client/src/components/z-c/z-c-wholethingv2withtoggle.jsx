@@ -176,7 +176,7 @@ const SearchPage = ({ currentUser }) => {
   // API key - in a real app, you'd want to handle this securely
   const GIPHY_API_KEY = 'YOUR_GIPHY_API_KEY'; 
 
-  useState(() => {
+  useEffect(() => {
     // Check if user is logged in
     if (!currentUser || !currentUser.id) {
       navigate('/login');
