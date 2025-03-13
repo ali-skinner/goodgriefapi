@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import Register from './Register';
 import { useNavigate } from "react-router-dom";
-// import SearchPage from "./SearchPage";
+
+
+
 
 function LoginPage() {
     const [password, setPassword] = useState('');
     const [username, setUsername] = useState('');
+    const [user, setUser] = useState('');
     const [isActive, setIsActive] = useState(false);
     const navigate = useNavigate();
     // will I need useEffect? to make sure this login components shows on mount only, can't keep loggin in if already active/login = true

@@ -1,4 +1,3 @@
-
 import React, { useState, createContext, useContext } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, Navigate, useNavigate } from "react-router-dom";
 import './App.css';
@@ -9,7 +8,6 @@ import FavoritesPage from './components/FavoritesPage';
 
 const UserContext = createContext(null);
 const useUser = useContext(UserContext);
-
 
 function App() {
   const [user, setUser] = useState('');
