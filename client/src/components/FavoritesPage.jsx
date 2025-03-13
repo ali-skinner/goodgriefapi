@@ -5,6 +5,7 @@
 
 import React from "react";
 import { useFavorites } from '../context/FavoritesContext';
+import GifCard from './GifCard';
 
 function FavoritesPage() {
     const { favorites, toggleFavorite, isFavorite } = useFavorites();
@@ -17,7 +18,7 @@ function FavoritesPage() {
       ) : (
         <div className="">
           {favorites.map(gif => (
-            <img //check if this should be a <div> or <p> ITS <img>!
+            <GifCard  //this should be a <img> if remove GifCard
               key={gif.id} 
               gif={gif} 
               isFavorite={true}
