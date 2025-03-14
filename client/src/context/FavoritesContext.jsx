@@ -1,4 +1,4 @@
-// src/context/FavoritesContext.jsx
+// src/context/FavoritesContext.js
 import React, { createContext, useState, useContext, useEffect } from 'react';
 
 // Create the context

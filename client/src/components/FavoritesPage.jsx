@@ -3,33 +3,37 @@
 // Strip out any code to different files as needed and think about how you might protect against any errors that might pop up.
 
 
-import React from "react";
-import { useFavorites } from '../context/FavoritesContext';
-import GifCard from './GifCard';
+import React from 'react';
+import { useFavorites } from '../context/FavoritesContext'; // Import the favorites context
 
 function FavoritesPage() {
-    const { favorites, toggleFavorite, isFavorite } = useFavorites();
+  const { favorites, toggleFavorite } = useFavorites(); // Use the favorites context
 
-    return (
-    <div className="">
+  return (
+    <div className="favorites-page">
       <h1>Your Favorites</h1>
       {favorites.length === 0 ? (
         <p>You haven't added any favorites yet!</p>
       ) : (
-        <div className="">
+        <div className="gif-grid">
           {favorites.map(gif => (
-            <GifCard  //this should be a <img> if remove GifCard
-              key={gif.id} 
-              gif={gif} 
-              isFavorite={true}
-              toggleFavorite={() => toggleFavorite(gif)}
-            />
+            <div key={gif.id} className="gif-card">
+              <img 
+                src={gif.images?.fixed_height?.url || gif.url} 
+                alt={gif.title} 
+              />
+              <div className="gif-info">
+                <button onClick={() => toggleFavorite(gif)}>
+                  ❤️ Remove from favorites
+                </button>
+              </div>
+            </div>
           ))}
         </div>
       )}
     </div>
   );
-};
+}
 
 export default FavoritesPage;
 
