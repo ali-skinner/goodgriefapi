@@ -1,5 +1,7 @@
 import { useState } from "react";
 import useSearch from "./SearchHook_useSearch";
+import { useFavorites } from "../context/FavoritesContext";
+import GifCard from "./z-cV3Toggle_GifCard";
 
 
 export default function SearchComponent() {
@@ -33,14 +35,20 @@ return (
 
         <div>
             {results.map((gif) => ( 
-                <img
+                <GifCard
                 key={gif.id}
                 src={gif.images.fixed_height.url}
                 alt={gif.title}
                 //height={gif.images.fixed_height.height} or call it a specific height {number}
                 />
             ))}
-        </div>
+        </div> 
+        <button
+        onClick={() => toggleFavorite(gif)}
+        className={isFavorite(gif.id) ? 'favorited' : ''}
+        >
+            {isFavorite(gif.id) ? '❤️ Remove from favorites' : '🤍 Add to favorites'}
+        </button>
     </>
     )
 }

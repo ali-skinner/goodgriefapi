@@ -44,12 +44,19 @@ function SearchPage() {
 
       <div className="gif-grid">
         {searchResults.map(gif => (
-          <GifCard 
-            key={gif.id} 
-            gif={gif} 
+          <GifCard
+            key={gif.id}
+            gif={gif}
           />
         ))}
       </div>
+      {/*check this button code */}
+      <button
+        onClick={() => toggleFavorite(gif)}
+        className={isFavorite(gif.id) ? 'favorited' : ''}
+      >
+        {isFavorite(gif.id) ? '❤️ Remove from favorites' : '🤍 Add to favorites'}
+      </button>
     </div>
   );
 }

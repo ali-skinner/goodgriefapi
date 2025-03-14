@@ -4,7 +4,7 @@ import React, { createContext, useState, useContext, useEffect } from 'react';
 // Create the context
 const FavoritesContext = createContext(null);
 
-// Custom hook to use the favorites context
+// Custom hook to use the favorites context -- listed at end /after FavoritesProvider**moved up for study
 export function useFavorites() {
   const context = useContext(FavoritesContext);
   if (!context) {
