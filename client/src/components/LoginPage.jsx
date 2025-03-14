@@ -2,9 +2,6 @@ import React, { useState } from "react";
 import Register from './Register';
 import { useNavigate } from "react-router-dom";
 
-
-
-
 function LoginPage() {
     const [password, setPassword] = useState('');
     const [username, setUsername] = useState('');
@@ -25,8 +22,6 @@ function LoginPage() {
             setIsActive(true);
             navigate("/search");
             //do i need to reset username and password to blank fields?
-            //show Search page
-            // <SearchPage />
         }
     };
 
@@ -49,21 +44,8 @@ function LoginPage() {
                         <button className="button-login" type="submit" name="logInButton" id="logInButton">Log In</button>
 
                         {/* Register onClick - Shows Register screen inputs/ Hides login In Screen inputs */}
-                        <button className="button-login" onClick={(e) => <Register /> }>Register</button>
+                        <button className="button-login" onClick={(e) => <Register />}>Register</button>
 
-
-                        {/*this is for the register component
-                    </div>
-                    <div className="login-Input">
-                        <label htmlFor="register">Register</label>
-                        <input value={register} onChange={(e) => setRegister(e.target.value)} type="text" placeholder="register" name="register" id="register" />
-                    </div>
-                    <div>
-                        <button className="button-login">Create Username</button>
-                        {/* {onClick - add username, email, password to userprofile object/ set login to true/ load Search screen/component } */}
-                    </div>
-                    <div>
-                        {/* <Register /> */}
                     </div>
                 </div>
             </form>
