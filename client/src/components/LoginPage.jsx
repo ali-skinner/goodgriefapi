@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Register from './Register';
-import { useNavigate } from "react-router-dom";
 
 function LoginPage() {
     const [password, setPassword] = useState('');
@@ -12,6 +11,7 @@ function LoginPage() {
 
     const isLoggedIn = () => {
         setIsActive(!isActive);
+        //Do i need this or does isAuthenticated from App work instead
     };
 
     const handleLogin = (e) => {
@@ -20,7 +20,6 @@ function LoginPage() {
 
         if (username && password) {
             setIsActive(true);
-            navigate("/search");
             //do i need to reset username and password to blank fields?
         }
     };
@@ -31,13 +30,10 @@ function LoginPage() {
                 <div className="login-Container">
                     <h2 className="login-Header">Sign In</h2>
                     <div>
-                        <label htmlFor="username">Username</label>
                         <input className="login-input" value={username} onChange={(e) => setUsername(e.target.value)} type="text" placeholder="username" name="username" id="username" />
                     </div>
                     <div>
-                        <label htmlFor="password">Password</label>
                         <input className="login-input" value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="password" name="password" id="password" />
-
                     </div>
                     <div className="button-container">
                         {/* Log In onClick - add username, email, password to userprofile object/ set login to true/ load Search screen/component */}

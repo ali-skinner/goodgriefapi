@@ -35,7 +35,7 @@ function App() {
     >
       <FavoritesProvider>
         <Router>
-          {isAuthenticated && <Navbar />}
+          {isAuthenticated && <Navbar onLogout={handleLogout} />}
           <Routes>
             <Route 
               path="/" 

@@ -7,11 +7,11 @@ import FavoritesPage from './components/FavoritesPage';
 
 
 const UserContext = createContext(null);
-const useUser = useContext(UserContext);
 
 function App() {
   const [user, setUser] = useState('');
   const [favorites, setFavorites] = useState([]);
+  const useUser = useContext(UserContext);
 
   //are these FAV functions toggling? would be nice to remove fav on search page if accidentally click fav button
   //do i need to save to local storage?
