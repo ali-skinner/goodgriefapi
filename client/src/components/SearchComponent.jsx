@@ -1,12 +1,13 @@
 import { useState } from "react";
 import useSearch from "./SearchHook_useSearch";
 import { useFavorites } from "../context/FavoritesContext";
-import GifCard from "./z-cV3Toggle_GifCard";
+import GifCard from "./GifCard_toggle";
 
 
 export default function SearchComponent() {
     const [query, setQuery] = useState('');
     const { results, loading, error, searchGiphy } = useSearch();
+    const { isFavorite, toggleFavorite } = useFavorites();
     
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -16,9 +17,10 @@ export default function SearchComponent() {
     };
 
 return (
-    <>
+    <div>
+        <h1>Search Up Giphy!</h1>
        <form onSubmit={handleSubmit}>
-        <label htmlFor="search-query">Search Query</label>
+        <label htmlFor="search-query">Search</label>
         <input
             type="text"
             placeholder="Search for GIFS!"
@@ -49,7 +51,7 @@ return (
         >
             {isFavorite(gif.id) ? '❤️ Remove from favorites' : '🤍 Add to favorites'}
         </button>
-    </>
+    </div>
     )
 }
 

@@ -4,7 +4,7 @@
 
 
 import React from 'react';
-import { useFavorites } from '../context/FavoritesContext'; // Import the favorites context
+import { useFavorites } from '../context/FavoritesContext'; 
 
 function FavoritesPage() {
   const { favorites, toggleFavorite } = useFavorites(); // Use the favorites context

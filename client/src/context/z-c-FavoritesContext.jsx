@@ -4,16 +4,6 @@ import React, { createContext, useState, useContext, useEffect } from 'react';
 // Create the context
 const FavoritesContext = createContext(null);
 
-// Custom hook to use the favorites context -- listed at end /after FavoritesProvider**moved up for study
-export function useFavorites() {
-  const context = useContext(FavoritesContext);
-  if (!context) {
-    throw new Error('useFavorites must be used within a FavoritesProvider');
-  }
-  return context;
-}
-
-
 // Create the provider component
 export function FavoritesProvider({ children }) {
   const [favorites, setFavorites] = useState([]);
@@ -64,4 +54,13 @@ export function FavoritesProvider({ children }) {
       {children}
     </FavoritesContext.Provider>
   );
+}
+
+// Custom hook to use the favorites context
+export function useFavorites() {
+  const context = useContext(FavoritesContext);
+  if (!context) {
+    throw new Error('useFavorites must be used within a FavoritesProvider');
+  }
+  return context;
 }

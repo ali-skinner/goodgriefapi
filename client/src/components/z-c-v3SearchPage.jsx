@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useUser } from '../App'; // For user context
 import { useFavorites } from '../context/FavoritesContext'; // For favorites context
-import GifCard from './GifCard';
+import GifCard from './GifCard_toggle';
 
 function SearchPage() {
   const [searchTerm, setSearchTerm] = useState('');

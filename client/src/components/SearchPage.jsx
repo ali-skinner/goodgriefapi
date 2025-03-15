@@ -1,12 +1,8 @@
 import React from "react";
-import { useState } from "react";
 import SearchComponent from "./SearchComponent";
-
-const baseUrl = 'https://api.giphy.com/v1/gifs/';
 
 
 function SearchPage() {
-
 
     return (
         <>

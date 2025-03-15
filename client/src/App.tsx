@@ -13,7 +13,6 @@ function App() {
   const [favorites, setFavorites] = useState([]);
   const useUser = useContext(UserContext);
 
-  //are these FAV functions toggling? would be nice to remove fav on search page if accidentally click fav button
   //do i need to save to local storage?
   //can i move these to components? how does this move affect useState? need to call addtoFavs in SearchComp. 
 
