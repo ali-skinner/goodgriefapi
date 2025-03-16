@@ -78,11 +78,15 @@ export function FavoritesProvider({ children }) {
   // Toggle favorite function
   const toggleFavorite = (gif) => {
     setFavorites(prevFavorites => {
+      // Check if gif is already in favorites 
+        // findIndex returns -1 if false
       const existingIndex = prevFavorites.findIndex(item => item.id === gif.id);
       
       if (existingIndex >= 0) {
+        // Remove from favorites
         return prevFavorites.filter(item => item.id !== gif.id);
       } else {
+        // Add to favorites
         return [...prevFavorites, gif];
       }
     });

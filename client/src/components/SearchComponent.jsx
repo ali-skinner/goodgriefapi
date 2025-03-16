@@ -19,8 +19,8 @@ export default function SearchComponent() {
 return (
     <div>
         <h1>Search Up Giphy!</h1>
-       <form onSubmit={handleSubmit}>
-        <label htmlFor="search-query">Search</label>
+        <form onSubmit={handleSubmit}>
+             <label htmlFor="search-query">Search</label>
         <input
             type="text"
             placeholder="Search for GIFS!"
