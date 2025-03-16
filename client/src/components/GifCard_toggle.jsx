@@ -13,9 +13,11 @@ function GifCard({ gif, toggleFavorite = null }) {
     }
   };
 
+  if (gif == null) return <div>Please wait....</div>
+
   return (
     <div className="gif-card">
-      <img src={gif.images.fixed_height.url} alt={gif.title} />
+      <img src={gif?.images.fixed_height.url ?? ""} alt={gif.title} />
       <div className="gif-card-info">
         <h3>{gif.title}</h3>
         <button 

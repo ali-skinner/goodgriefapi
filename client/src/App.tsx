@@ -3,7 +3,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
-import { UserProvider } from './context/UserContext';
+import { UserProvider, useUser } from './context/UserContext';
 import { FavoritesProvider } from './context/FavoritesContext';
 import LoginPage from './components/LoginPage';
 import SearchPage from './components/SearchPage';
@@ -24,7 +24,7 @@ function App() {
 
 // Separate component to use the contexts
 function AppContent() {
-  const { user, isAuthenticated, handleLogout } = useUser();
+  const { isAuthenticated, handleLogout } = useUser();
   
   return (
     <>

@@ -39,18 +39,19 @@ return (
             {results.map((gif) => ( 
                 <GifCard
                 key={gif.id}
-                src={gif.images.fixed_height.url}
-                alt={gif.title}
+                gif={gif}
+                // src={gif.images.fixed_height.url}
+                // alt={gif.title}
                 //height={gif.images.fixed_height.height} or call it a specific height {number}
                 />
             ))}
         </div> 
-        <button
+        {/* <button
         onClick={() => toggleFavorite(gif)}
         className={isFavorite(gif.id) ? 'favorited' : ''}
         >
             {isFavorite(gif.id) ? '❤️ Remove from favorites' : '🤍 Add to favorites'}
-        </button>
+        </button> */}
     </div>
     )
 }
