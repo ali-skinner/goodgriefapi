@@ -13,6 +13,9 @@ function SearchPage() {
 
 export default SearchPage;
 
+
+// GIPHY NOTES
+
 //https://api.giphy.com/v1/gifs/search?api_key=3ZkAsAtjGs6SJgjRttscxEyJ8pq6odBV&q=${search}&limit=10
 //api.giphy.com/v1/gifs/trending
 //Do not cache API responses -- means what? -- don't store in local storage

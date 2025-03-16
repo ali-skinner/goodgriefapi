@@ -76,3 +76,64 @@ button:focus-visible {
 .button-container {
   padding: 10px;
 }
+
+/* Optional: Add some basic CSS to style the favorites toggle button */
+/* const styles = ` */
+  .favorite-active {
+    background-color: #ff3366;
+    color: white;
+  }
+
+  .favorite-inactive {
+    background-color: #f0f0f0;
+    color: #333;
+  }
+
+  .results-grid, .favorites-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+  }
+
+  .gif-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .gif-item img {
+    width: 100%;
+    height: auto;
+  }
+
+  .gif-item button {
+    margin: 8px;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .remove-button {
+    background-color: #f0f0f0;
+    color: #333;
+  }
+
+  nav {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  nav a {
+    color: #0066cc;
+    text-decoration: none;
+  }
+
+  nav a:hover {
+    text-decoration: underline;
+  }
+`;
